@@ -13,10 +13,8 @@ const { handleImage, handleApiCall } = require("./controllers/image");
 const db = knex({
   client: "pg",
   connection: {
-    host: "postgresql-sinuous-03497",
-    user: "taylor_roemer",
-    password: "",
-    database: "smart-brain",
+    host: process.env.DATABASE_URL,
+    ssl: true
   },
 });
 
